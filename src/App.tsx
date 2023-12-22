@@ -9,8 +9,18 @@ function App() {
     <div>
       <NavBar />
       <Header />
-      <Panel title="Panel 1" content="Content for panel 1" />
-      
+      <div className='container'>
+        <Panel 
+          title="Bio" 
+          image="src\assets\bioImage.jpg" 
+          content="Learn more about me" 
+        />
+        <Panel 
+          title="Projects" 
+          image="src\assets\projectsImage.jpg" 
+          content="Portfolio of current and completed work" 
+        />
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 .header {
     height: 100vh;
+    flex-direction: column;
     background-image: url('src/assets/backgroundLeaves.jpg');
     background-attachment: fixed;
     background-size: cover;
@@ -9,9 +10,95 @@
     color: rgb(221, 195, 250);
     font-size: 4em;
     font-family: monospace, sans-serif;
+    text-align: center;
   }
+
+.header h1 {
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
+.header button {
+  padding: 10px 20px;
+  font-size: 0.5em;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #a2a2a2a0;
+  color: white;
+  outline: none;
+  transition: background-color 0.3s ease;
+  font-family: monospace, sans-serif;
+}
+
+.header button:hover {
+  background-color: #898989;
+}
 
 .navbar {
   font-family: monospace, sans-serif;
 }
-  
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.panel {
+  border: 2px solid rgb(38, 27, 63);
+  padding: 0;
+  width: 35%;
+  cursor: pointer;
+  margin: 20px;
+  background-color: #333;
+  box-sizing: border-box;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: monospace, sans-serif;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.panel img {
+  width: 100%;
+  display: block;
+}
+
+.panel-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  font-family: monospace, sans-serif;
+}
+
+.panel-content {
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-family: monospace, sans-serif;
+}
+
+.panel:hover {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.panel:hover .panel-content {
+  color: rgb(59, 58, 58);
+}
+
+.panel:hover .panel-title {
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+}
