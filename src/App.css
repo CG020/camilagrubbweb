@@ -117,17 +117,17 @@
 .profile-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 35px;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 60px;
 }
 
 .profile-image {
-  width: 200px;
+  width: 300px;
   height: auto;
-  margin-left: 30px;
 }
 
 .profile-text {
-  flex: 1;
+  margin-right: 70px;
   text-align: center;
 }
