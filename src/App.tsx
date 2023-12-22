@@ -46,12 +46,17 @@ function App() {
             <Panel 
               title="Bio" 
               image="src\assets\bioImage.jpg" 
-              content="Learn more about me" 
+              content="Learn more about me and my background" 
             />
             <Panel 
               title="Projects" 
               image="src\assets\projectsImage.jpg" 
               content="Portfolio of current and completed work" 
+            />
+            <Panel 
+              title="Involvement" 
+              image="src\assets\projectsImage.jpg" 
+              content="Where you can find me in the community" 
             />
           </div>
         </div>
