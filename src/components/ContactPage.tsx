@@ -4,8 +4,8 @@ import Panel from "./Panel";
 
 const ContactPage = () => {
     const contactStyle: React.CSSProperties = {
-        fontFamily: 'monospace, sans-serif',
-        margin: '10px',
+        fontFamily: 'monospace.',
+        margin: '30px',
     };
 
     return (

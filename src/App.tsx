@@ -28,20 +28,20 @@ function App() {
 
   return (
     <Router>
-      <NavBar message='Welcome'/>
-      <div style={{ opacity: headerOpacity }}>
-          <Header />
-      </div>
-      <div className="profile-section">
-        <div className="profile-text">
-            <p>Hello, my name is Camila Grubb. <br></br>Welcome to my page! My field of study is 
-            Computer Science. <br></br> Learn more in my Bio page below!</p>
-          </div>
-          <img src="src\assets\originalImage.jpg" className="profile-image" alt="Profile" />
-      </div>
       <Routes>
         <Route path="/" element= {
           <div>
+            <NavBar message='Welcome'/>
+            <div style={{ opacity: headerOpacity }}>
+            <Header />
+          </div>
+          <div className="profile-section">
+            <div className="profile-text">
+                <p>Hello, my name is Camila Grubb. <br></br>Welcome to my page! My field of study is 
+                Computer Science. <br></br> Learn more in my Bio page below!</p>
+              </div>
+              <img src="src\assets\originalImage.jpg" className="profile-image" alt="Profile" />
+          </div>
           <div className='container'>
             <Panel 
               title="Bio" 
