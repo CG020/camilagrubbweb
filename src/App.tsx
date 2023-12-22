@@ -8,8 +8,8 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Panel title="Panel 1" content="Content for panel 1" />
       <Header />
+      <Panel title="Panel 1" content="Content for panel 1" />
       
     </div>
   );

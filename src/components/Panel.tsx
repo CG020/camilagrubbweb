@@ -1,6 +1,4 @@
-import './Panel.css';
-
-function Panel(title: string, content: string) {
+function Panel({ title, content }) {
   return (
     <div className="panel">
       <h2>{title}</h2>
