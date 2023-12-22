@@ -1,8 +1,9 @@
+import NavBar from "./NavBar";
 
 const ContactPage = () => {
   return (
     <div>
-      <h1>Contact Me</h1>
+        <NavBar message={'Contact Information'}/>
     </div>
   );
 };

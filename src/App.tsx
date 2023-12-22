@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element= {
         <div>
-          <NavBar />
+          <NavBar message='Welcome'/>
           <Header />
           <div className='container'>
             <Panel 
