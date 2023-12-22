@@ -113,3 +113,21 @@
 .card {
   position: relative;
 }
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+}
+
+.profile-image {
+  width: 200px;
+  height: auto;
+  margin-left: 30px;
+}
+
+.profile-text {
+  flex: 1;
+  text-align: center;
+}
