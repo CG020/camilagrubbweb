@@ -49,9 +49,9 @@
 .panel {
   border: 2px solid rgb(38, 27, 63);
   padding: 0;
-  width: 35%;
+  width: 45%;
   cursor: pointer;
-  margin: 20px;
+  margin: 15px;
   background-color: #333;
   box-sizing: border-box;
   height: auto;
@@ -101,4 +101,15 @@
 .panel:hover .panel-title {
   background: rgba(255, 255, 255, 0.5);
   color: black;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  position: relative;
 }
