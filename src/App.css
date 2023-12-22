@@ -11,7 +11,21 @@
     font-size: 4em;
     font-family: monospace, sans-serif;
     text-align: center;
-  }
+}
+
+.profile-image-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid white;
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+}
 
 .header h1 {
   margin-bottom: 20px;
