@@ -15,23 +15,27 @@ const ContactPage = () => {
         <div className='container'>
             <Panel 
                 title="Email" 
-                image="src\assets\paperBanner.jpg" 
+                image="src\assets\windowImage.jpg" 
                 content="camilagrubb@gmail.com" 
+                onClick={null}
             />
             <Panel 
                 title="Phone" 
-                image="src\assets\paperBanner.jpg" 
+                image="src\assets\windowImage.jpg" 
                 content="520.360.9985" 
+                onClick={null}
             />
             <Panel 
                 title="Linkedin" 
-                image="src\assets\paperBanner.jpg" 
+                image="src\assets\windowImage.jpg" 
                 content={<a href="https://www.linkedin.com/in/camila-grubb-8ab00b240/"> Linkedin Profile Here</a>}
+                onClick={null}
             />
             <Panel 
                 title="Github" 
-                image="src\assets\paperBanner.jpg" 
+                image="src\assets\windowImage.jpg" 
                 content={<a href="https://github.com/CG020"> Github Profile Here</a>}
+                onClick={null}
             />
         </div>
     </div>

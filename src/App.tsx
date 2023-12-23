@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 /*all component imports*/ 
 import ContactPage from './components/ContactPage';
+import BioPage from './components/BioPage';
+import ProjectsPage from './components/ProjectsPage';
+import InvolvePage from './components/InvolvePage';
 import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import Panel from './components/Panel';
@@ -25,7 +28,6 @@ function App() {
 
   const headerOpacity = Math.max(1 - scrollY / 500, 0);
 
-
   return (
     <Router>
       <Routes>
@@ -46,17 +48,20 @@ function App() {
             <Panel 
               title="Bio" 
               image="src\assets\bioImage.jpg" 
-              content="Learn more about me and my background" 
+              content="Learn more about me and my background"
+              onClick={<Route path="/bio" element={<BioPage />} />}
             />
             <Panel 
               title="Projects" 
               image="src\assets\projectsImage.jpg" 
               content="Portfolio of current and completed work" 
+              onClick={<Route path="/projects" element={<ProjectsPage />} />}
             />
             <Panel 
               title="Involvement" 
               image="src\assets\projectsImage.jpg" 
-              content="Where you can find me in the community" 
+              content="Where you can find me in the community"
+              onClick={<Route path="/involve" element={<InvolvePage />} />}
             />
           </div>
         </div>

@@ -1,6 +1,6 @@
-function Panel({ title, image, content }) {
+function Panel({ title, image, content, onClick }) {
   return (
-    <div className="panel" onClick={() => console.log('Panel clicked!')}>
+    <div className="panel" onClick={onClick}>
       <div className="image-container">
         <img src={image} alt={title} />
         <h2 className="panel-title">{title}</h2>
