@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 /*all component imports*/ 
 import ContactPage from './components/ContactPage';
@@ -9,6 +10,8 @@ import InvolvePage from './components/InvolvePage';
 import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import Panel from './components/Panel';
+import Divider from './components/Divider';
+
 import "./App.css";
 
 function App() {
@@ -44,29 +47,32 @@ function App() {
               </div>
               <img src="src\assets\originalImage.jpg" className="profile-image" alt="Profile" />
           </div>
+          <Divider title="Work" align1='20px' align2='0px'></Divider>
           <div className='container'>
+            <Link to="/bio">
             <Panel 
               title="Bio" 
               image="src\assets\bioImage.jpg" 
               content="Learn more about me and my background"
-              onClick={<Route path="/bio" element={<BioPage />} />}
-            />
+            /> </Link>
             <Panel 
               title="Projects" 
               image="src\assets\projectsImage.jpg" 
               content="Portfolio of current and completed work" 
-              onClick={<Route path="/projects" element={<ProjectsPage />} />}
+              // onClick={<Route path="/projects" element={<ProjectsPage />} />}
             />
             <Panel 
               title="Involvement" 
               image="src\assets\projectsImage.jpg" 
               content="Where you can find me in the community"
-              onClick={<Route path="/involve" element={<InvolvePage />} />}
+              // onClick={<Route path="/involve" element={<InvolvePage />} />}
             />
           </div>
+          <Divider title="Play" align1='auto' align2='20px'></Divider>
         </div>
         } />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/bio" element={<BioPage />} />
         </Routes>
     </Router>
   );
