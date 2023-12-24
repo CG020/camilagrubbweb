@@ -24,7 +24,7 @@ const BioPage = () => {
         height: 'auto',
         marginLeft: '20px',
         padding: '30px',
-        borderRadius: '10px',
+        borderRadius: '30px',
     };
 
     const bioText: React.CSSProperties = {
@@ -38,7 +38,7 @@ const BioPage = () => {
     return(
         <div>
             <NavBar message={'My journey so far . . .'}/>
-            <h1 style={headerText}><i><b>Hi! My name is Camila Grubb</b></i></h1>
+            <h1 style={headerText}><i><b>Hi! My name is<br></br> Camila Grubb</b></i></h1>
             <div style={bioSection}>
                 <img src="src\assets\bioProfile.jpg" className="profile-image" alt="BioProfile" style={bioImage} />
                 <p style={bioText}>I am a current alumni at the University of Arizona completing my B.S. in Computer Science, my
@@ -61,11 +61,24 @@ const BioPage = () => {
                 professors as well as practiced string communication within the work sphere. I believe integrating useful technological
                 tools into the workplace is advantagious for improving business efficency.  
                 </p>
-                <img src="src\assets\UAImage.jpeg" className="college-image" alt="college" style={bioImage} />
+                <img src="src\assets\UALogo.jpg" className="college-image" alt="college" style={bioImage} />
                 </div>
+
                 <Divider title="Research" align1='auto' align2='20px'></Divider>
                 <div style={bioSection}>
                 <img src="src\assets\sarverImage.jpg" className="sarver-image" alt="sarver" style={bioImage} />
+                <p style={bioText}> placement text
+                </p>
+                </div>
+
+                <Divider title="Experience" align1='20px' align2='0px'></Divider>
+                <div style={bioSection}>
+                <p style={bioText}> placement text
+                </p>
+                </div>
+
+                <Divider title="Personal Learning" align1='auto' align2='20px'></Divider>
+                <div style={bioSection}>
                 <p style={bioText}> placement text
                 </p>
                 </div>

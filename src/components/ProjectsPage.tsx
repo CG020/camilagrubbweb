@@ -4,7 +4,7 @@ const ProjectsPage = () => {
 
     return(
         <div>
-            <NavBar message={'Check out some my work so far . . .'}/>
+            <NavBar message={'Some my work so far . . .'}/>
         </div>
     );
 }
