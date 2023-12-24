@@ -3,6 +3,7 @@ function Divider({ title, align1, align2 }) {
         marginLeft: align1,
         marginRight: align2,
     };
+    
     return (
       <div className="divider" style={alignment}>
         {title}
