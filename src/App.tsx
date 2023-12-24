@@ -55,24 +55,26 @@ function App() {
               image="src\assets\bioImage.jpg" 
               content="Learn more about me and my background"
             /> </Link>
+            <Link to="/projects">
             <Panel 
               title="Projects" 
-              image="src\assets\projectsImage.jpg" 
+              image="src\assets\bioImage.jpg" 
               content="Portfolio of current and completed work" 
-              // onClick={<Route path="/projects" element={<ProjectsPage />} />}
-            />
+            /> </Link>
+            <Link to="/involve">
             <Panel 
               title="Involvement" 
-              image="src\assets\projectsImage.jpg" 
+              image="src\assets\bioImage.jpg" 
               content="Where you can find me in the community"
-              // onClick={<Route path="/involve" element={<InvolvePage />} />}
-            />
+            /> </Link>
           </div>
           <Divider title="Play" align1='auto' align2='20px'></Divider>
         </div>
         } />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/bio" element={<BioPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/involve" element={<InvolvePage />} />
         </Routes>
     </Router>
   );
