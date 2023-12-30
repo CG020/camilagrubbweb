@@ -1,5 +1,6 @@
 import Divider from "./Divider";
 import NavBar from "./NavBar";
+import { useEffect } from 'react';
 
 const BioPage = () => {
 
@@ -8,7 +9,7 @@ const BioPage = () => {
         // alignItems: 'center',
         justifyContent: 'center',
         padding: '20px',
-    }
+    };
 
     const headerText: React.CSSProperties = {
         marginLeft: '5px',
@@ -34,13 +35,37 @@ const BioPage = () => {
         textAlign: 'center',
         fontSize: '1em',
         marginTop: '35px',
-    }
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = document.querySelectorAll('.fadeInSection');
+    
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionBottom = section.getBoundingClientRect().bottom;
+                const partiallyInView = sectionTop < window.innerHeight && sectionBottom >= 0;
+                
+                if (partiallyInView) {
+                    section.classList.add('isVisible');
+                } else {
+                    section.classList.remove('isVisible');
+                }
+            });
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    
+    
 
     return(
         <div>
             <NavBar message={'My journey so far . . .'}/>
             <h1 style={headerText}><i><b>Hi! My name is<br></br> Camila Grubb</b></i></h1>
-            <div style={bioSection}>
+            <div style={bioSection} className="fadeInSection">
                 <img src="src\assets\bioProfile.jpg" className="profile-image" alt="BioProfile" style={bioImage} />
                 <p style={bioText}>I am a current alumni at the University of Arizona completing my B.S. in Computer Science, my
                     minor in Business Administration at Eller College, and my certification in Cybersecurity at UA South.<br></br>
@@ -50,7 +75,7 @@ const BioPage = () => {
             </div>
             <div>
                 <Divider title="Academics" align1='20px' align2='0px'></Divider>
-                <div style={bioSection}>
+                <div style={bioSection} className="fadeInSection">
                 <p style={bioText}> As a Computer Science student at UA, I've cultivated my skills in 
                 many languages including Python, Java, Javascript, and C. Many projects I completed
                 in my classes are included on my Github profile and explained under the 'Projects' section of
@@ -66,7 +91,7 @@ const BioPage = () => {
                 </div>
 
                 <Divider title="Research" align1='auto' align2='20px'></Divider>
-                <div style={bioSection}>
+                <div style={bioSection} className="fadeInSection">
                 <img src="src\assets\sarverImage.jpg" className="sarver-image" alt="sarver" style={bioImage} />
                 <p style={bioText}> I have experience in working on collaborative research and data analysis from ongoing work at the Banner Medical
                 Center under the University of Arizona. I work with several UA students on various experiments spanning Physiology to Artificial Intelligence.
@@ -83,18 +108,31 @@ const BioPage = () => {
                 </div>
 
                 <Divider title="Experience" align1='20px' align2='0px'></Divider>
-                <div style={bioSection}>
-                <p style={bioText}> placement text
+                <div style={bioSection} className="fadeInSection">
+                <p style={bioText}> Outside my research projects at Banner, I've worked as a project Desiner Intern for the UA Design Lab where
+                my responsibility was to design the steps for completing long term projects that come in the form of a research endeavor ending in a
+                paper or an end tangible product. I work with a team directing members through the steps of the software design plan, facilitate communication between 
+                members and departments, and integrating computer science concepts and code into where the particular skills can benefit the project. <br></br><br></br>
+                Project Management is a skill I have been developing on my own time and in work. I believe string communicationa and clear, soldified planning is the 
+                key to a successful collabotation that will result in the optimal end goal.
                 </p>
                 </div>
 
                 <Divider title="Personal Learning" align1='auto' align2='20px'></Divider>
-                <div style={bioSection}>
-                <p style={bioText}> placement text
+                <div style={bioSection} className="fadeInSection">
+                <p style={bioText}> While enhancing my experience and skills in the academic sphere, I also find it both gratifying and educational to 
+                undertake my own projects not connected to a professional setting. For technical skills, I have several ongoing and completed projects 
+                that I began because I believe using coding languages in practice is the best way to not only learn new languages but also reinforce the skills
+                in other languages. I have undertaken projects in Python, Java, HTML/CSS, JavaScript, and React - all for fun and improvement. <br></br><br></br>
+                Alongside my love of coding, I have other interests and hobbies that keep my life balanced and grounded. I shoot archery as a hobby with my family -  
+                improving my aim every day - as well as hike around the trails around the archery range in Tucson's lovely desert terrain. I love to read and write 
+                with a dream to publish some short stories someday on the subject of escapism in the modern day. I've even included some of my book recommendations
+                under the 'Play' section in the homepage!<br></br><br></br> I've recently gotten into photography partially fueled by my love of travel. I feature a lot
+                of my photos on this webpage and will continue to research it as an interest. 
                 </p>
                 </div>
             </div>
-          </div>
+        </div>
     );
 }
 
