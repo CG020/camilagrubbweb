@@ -5,7 +5,7 @@ const BioPage = () => {
 
     const bioSection: React.CSSProperties = {
         display: 'flex',
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center',
         padding: '20px',
     }
@@ -16,13 +16,14 @@ const BioPage = () => {
         textAlign: 'center',
         fontFamily: 'playfair display',
         color: '#a2a2a2a0',
-        fontSize: '60px',
+        fontSize: '50px',
     };
 
     const bioImage: React.CSSProperties = {
-        width: '450px',
+        width: '400px',
         height: 'auto',
         marginLeft: '20px',
+        marginRight: '20px',
         padding: '30px',
         borderRadius: '30px',
     };
@@ -31,8 +32,8 @@ const BioPage = () => {
         fontFamily: 'monospace',
         marginRight: '20px',
         textAlign: 'center',
-        fontSize: '1.2em',
-        marginTop: '55px',
+        fontSize: '1em',
+        marginTop: '35px',
     }
 
     return(
