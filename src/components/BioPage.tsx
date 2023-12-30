@@ -68,7 +68,17 @@ const BioPage = () => {
                 <Divider title="Research" align1='auto' align2='20px'></Divider>
                 <div style={bioSection}>
                 <img src="src\assets\sarverImage.jpg" className="sarver-image" alt="sarver" style={bioImage} />
-                <p style={bioText}> placement text
+                <p style={bioText}> I have experience in working on collaborative research and data analysis from ongoing work at the Banner Medical
+                Center under the University of Arizona. I work with several UA students on various experiments spanning Physiology to Artificial Intelligence.
+                I have worked on several projects involving publication such as <a href='https://asaio.org/conference/program/2023/RENAL6.cgi'>Movement 
+                Abnormality Quantitation: Comparison of On-Body vs. Around-Body Systems for Assessment of Movement Abnormalities in Chronic Kidney Disease</a>, 
+                <a href='https://asaio.org/conference/program/2023/RENAL2.cgi'>Wired Room: Digital Sound, Image and Motion Analysis for Enhanced Medical Diagnostics 
+                from A Patient Encounter</a>, and <a href='https://asaio.org/conference/program/2023/RENAL13.cgi'> Python Computational Methods Advance Video Motion 
+                Capture for Telehealth and In-Person Diagnostic Accuracy</a> - along with several ongoing studies. All of the mentioned research papers involved
+                a demonstration in understanding and conducting the steps of the Scientific Method, data analytics, and writing code scripts able to produce the target
+                output. <br></br><br></br> Reviewing and editing publications has equipped me with the skill of formal reporting. This research has given me the amazing 
+                oppurtunity to work in interdisciplinary settings with a great and knowledgeable group of people. I've been exposed to the crucialness of introducing 
+                technical expertise in research settings for greater efficiency.
                 </p>
                 </div>
 
