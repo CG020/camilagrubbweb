@@ -52,11 +52,28 @@ const ProjectsPage = () => {
 
     return(
         <div>
-            <NavBar message={'Some my work so far . . .'}/>
+            <NavBar message={'some my work so far.'}/>
             <h1 style={projHeader}><i>completed projects.</i></h1>
             <div style={projSection} className="fadeInSection">
-                <p style={projText}>
-                </p>
+            <div className="card text-bg-dark">
+                <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
+                <div className="card-img-overlay">
+                    <h5 className="card-title" >Project</h5>
+                    <p className="card-text">placeholder</p>
+                    <p className="card-text"><small>extra note</small></p>
+                </div>
+            </div>
+            </div>
+
+            <div style={projSection} className="fadeInSection">
+            <div className="card text-bg-dark">
+                <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
+                <div className="card-img-overlay">
+                    <h5 className="card-title" >This Website</h5>
+                    <p className="card-text">placeholder</p>
+                    <p className="card-text"><small>extra note</small></p>
+                </div>
+            </div>
             </div>
         </div>
     );
