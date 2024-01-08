@@ -6,7 +6,6 @@ const BioPage = () => {
 
     const bioSection: React.CSSProperties = {
         display: 'flex',
-        // alignItems: 'center',
         justifyContent: 'center',
         padding: '20px',
     };
@@ -17,7 +16,7 @@ const BioPage = () => {
         textAlign: 'center',
         fontFamily: 'playfair display',
         color: '#a2a2a2a0',
-        fontSize: '50px',
+        fontSize: '70px',
     };
 
     const bioImage: React.CSSProperties = {
@@ -26,7 +25,7 @@ const BioPage = () => {
         marginLeft: '20px',
         marginRight: '20px',
         padding: '30px',
-        borderRadius: '30px',
+        borderRadius: '50px',
     };
 
     const bioText: React.CSSProperties = {
