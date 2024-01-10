@@ -47,28 +47,28 @@ function App() {
               </div>
               <img src="src\assets\originalImage.jpg" className="profile-image" alt="Profile" />
           </div>
-          <Divider title="Work" align1='20px' align2='0px'></Divider>
+          <Divider title="work" align1='20px' align2='0px'></Divider>
           <div className='container'>
             <Link to="/bio">
             <Panel 
-              title="Bio" 
+              title="bio" 
               image="src\assets\bioImage.jpg" 
-              content="Learn more about me and my background"
+              content="learn more about me and my background"
             /> </Link>
             <Link to="/projects">
             <Panel 
-              title="Projects" 
+              title="projects" 
               image="src\assets\bioImage.jpg" 
-              content="Portfolio of current and completed work" 
+              content="portfolio of current and completed work" 
             /> </Link>
             <Link to="/involve">
             <Panel 
-              title="Involvement" 
+              title="involvement" 
               image="src\assets\bioImage.jpg" 
-              content="Where you can find me in the community"
+              content="where you can find me in the community"
             /> </Link>
           </div>
-          <Divider title="Play" align1='auto' align2='20px'></Divider>
+          <Divider title="play" align1='auto' align2='20px'></Divider>
         </div>
         } />
         <Route path="/contact" element={<ContactPage />} />

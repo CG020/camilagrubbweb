@@ -10,17 +10,17 @@ const ContactPage = () => {
 
     return (
     <div>
-        <NavBar message={'Contact Information'}/>
-        <p style={contactStyle}>Contact me with any of the options below or browse my professional profiles!</p>
+        <NavBar message={'contact information'}/>
+        <p style={contactStyle}>contact me with any of the options below or browse my professional profiles</p>
         <div className='container'>
             <Panel 
-                title="Email" 
+                title="email" 
                 image="src\assets\windowImage.jpg" 
                 content="camilagrubb@gmail.com" 
                 onClick={null}
             />
             <Panel 
-                title="Phone" 
+                title="phone" 
                 image="src\assets\windowImage.jpg" 
                 content="520.360.9985" 
                 onClick={null}

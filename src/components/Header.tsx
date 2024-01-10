@@ -5,7 +5,7 @@ function Header() {
     <div className="header">
       <h1><i>Hello, I'm<br></br><b>Camila Grubb</b></i></h1>
       <Link to="/contact">
-        <button><i>Contact Me</i></button>
+        <button><i>contact me</i></button>
       </Link>
     </div>
   );

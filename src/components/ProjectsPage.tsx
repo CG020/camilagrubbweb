@@ -52,7 +52,7 @@ const ProjectsPage = () => {
 
     return(
         <div>
-            <NavBar message={'some my work so far.'}/>
+            <NavBar message={'my work so far'}/>
             <h1 style={projHeader}><i>completed projects.</i></h1>
             <div style={projSection} className="fadeInSection">
             <div className="card text-bg-dark">
@@ -70,11 +70,29 @@ const ProjectsPage = () => {
                 <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" >This Website</h5>
-                    <p className="card-text">placeholder</p>
-                    <p className="card-text"><small>extra note</small></p>
+                    <p className="card-text">This website was created from scratch as a side project I can update at 
+                    leisure so I can document my projects.</p>
+                    <p className="card-text"><small>Repository found on GitHub</small></p>
                 </div>
             </div>
             </div>
+
+            <h1 style={projHeader}><i>in progress.</i></h1>
+
+            <div style={projSection} className="fadeInSection">
+            <div className="card text-bg-dark">
+                <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
+                <div className="card-img-overlay">
+                    <h5 className="card-title" >Dining Out</h5>
+                    <p className="card-text">Deciding where to dine that would satisfy all peoples in a party 
+                    can be difficult. Dining Out is an idea to make a one source webscraping search that can
+                    finalize that decision.<table></table></p>
+                    <p className="card-text"><small>Repository found on GitHub</small></p>
+                </div>
+            </div>
+            </div>
+
+            <h1 style={projHeader}><i>project workflow.</i></h1>
         </div>
     );
 }

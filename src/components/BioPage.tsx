@@ -112,7 +112,7 @@ const BioPage = () => {
                 my responsibility was to design the steps for completing long term projects that come in the form of a research endeavor ending in a
                 paper or an end tangible product. I work with a team directing members through the steps of the software design plan, facilitate communication between 
                 members and departments, and integrating computer science concepts and code into where the particular skills can benefit the project. <br></br><br></br>
-                Project Management is a skill I have been developing on my own time and in work. I believe string communicationa and clear, soldified planning is the 
+                Project Management is a skill I have been developing on my own time and in work. I believe string communication and clear, soldified planning is the 
                 key to a successful collabotation that will result in the optimal end goal.
                 </p>
                 </div>
