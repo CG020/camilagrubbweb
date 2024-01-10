@@ -52,7 +52,7 @@ const ProjectsPage = () => {
 
     return(
         <div>
-            <NavBar message={'my work so far'}/>
+            <NavBar message={'my work so far'} tabs={['completed','in progress','workflow']}/>
             <h1 style={projHeader}><i>completed projects.</i></h1>
             <div style={projSection} className="fadeInSection">
             <div className="card text-bg-dark">

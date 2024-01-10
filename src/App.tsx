@@ -36,7 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element= {
           <div>
-            <NavBar message='Welcome'/>
+            <NavBar message='Welcome' tabs={['work','play','contacts']}/>
             <div style={{ opacity: headerOpacity }}>
             <Header />
           </div>

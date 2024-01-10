@@ -62,7 +62,7 @@ const BioPage = () => {
 
     return(
         <div>
-            <NavBar message={'my journey so far.'}/>
+            <NavBar message={'my journey so far.'} tabs={['academics','research','experience','personal']}/>
             <h1 style={headerText}><i><b>Hi! My name is<br></br> Camila Grubb</b></i></h1>
             <div style={bioSection} className="fadeInSection">
                 <img src="src\assets\bioProfile.jpg" className="profile-image" alt="BioProfile" style={bioImage} />
