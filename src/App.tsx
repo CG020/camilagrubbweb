@@ -7,6 +7,7 @@ import ContactPage from './components/ContactPage';
 import BioPage from './components/BioPage';
 import ProjectsPage from './components/ProjectsPage';
 import InvolvePage from './components/InvolvePage';
+import PhotoPage from './components/PhotoPage';
 import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import Panel from './components/Panel';
@@ -69,12 +70,21 @@ function App() {
             /> </Link>
           </div>
           <Divider title="play" align1='auto' align2='20px'></Divider>
+          <div className='container'>
+            <Link to="/photo">
+              <Panel 
+                title="photography" 
+                image="src\assets\bioImage.jpg" 
+                content="photography from my travels"
+              /> </Link>
+          </div>
         </div>
         } />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/bio" element={<BioPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/involve" element={<InvolvePage />} />
+        <Route path="/photo" element={<PhotoPage />} />
         </Routes>
     </Router>
   );

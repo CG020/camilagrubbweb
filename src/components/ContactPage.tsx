@@ -10,7 +10,7 @@ const ContactPage = () => {
 
     return (
     <div>
-        <NavBar message={'contact information'}/>
+        <NavBar message={'contact information'} tabs={['']}/>
         <p style={contactStyle}>contact me with any of the options below or browse my professional profiles</p>
         <div className='container'>
             <Panel 

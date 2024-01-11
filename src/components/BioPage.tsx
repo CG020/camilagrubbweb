@@ -8,6 +8,7 @@ const BioPage = () => {
         display: 'flex',
         justifyContent: 'center',
         padding: '20px',
+        maxWidth: '100%',
     };
 
     const headerText: React.CSSProperties = {
@@ -26,6 +27,7 @@ const BioPage = () => {
         marginRight: '20px',
         padding: '30px',
         borderRadius: '50px',
+        maxWidth: '100%',
     };
 
     const bioText: React.CSSProperties = {
@@ -34,6 +36,7 @@ const BioPage = () => {
         textAlign: 'center',
         fontSize: '1em',
         marginTop: '35px',
+        maxWidth: '100%',
     };
 
     useEffect(() => {
@@ -43,9 +46,9 @@ const BioPage = () => {
             sections.forEach(section => {
                 const sectionTop = section.getBoundingClientRect().top;
                 const sectionBottom = section.getBoundingClientRect().bottom;
-                const partiallyInView = sectionTop < window.innerHeight && sectionBottom >= 0;
+                const middle = sectionTop < window.innerHeight && sectionBottom >= 0;
                 
-                if (partiallyInView) {
+                if (middle) {
                     section.classList.add('isVisible');
                 } else {
                     section.classList.remove('isVisible');
