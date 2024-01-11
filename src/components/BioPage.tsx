@@ -29,6 +29,7 @@ const BioPage = () => {
         padding: '30px',
         borderRadius: '50px',
         maxWidth: '100%',
+        filter: 'grayscale(40%)',
     };
 
     const bioText: React.CSSProperties = {

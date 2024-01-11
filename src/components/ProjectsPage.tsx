@@ -93,6 +93,16 @@ const ProjectsPage = () => {
             </div> </section>
 
             <h1 style={projHeader}><i>project workflow.</i></h1>
+            <section id="workflow">
+            <div className="card text-bg-dark">
+            <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
+            <div className="card-img-overlay">
+                <h5 className="card-title" >Project Workflow</h5>
+                <p className="card-text">How I go about the project design process - employed based on experience.
+                <table></table></p>
+                <p className="card-text"><small>Goal is high efficiency!</small></p>
+            </div>
+            </div> </section>
         </div>
     );
 }
