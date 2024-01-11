@@ -6,9 +6,10 @@ const BioPage = () => {
 
     const bioSection: React.CSSProperties = {
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         padding: '20px',
-        maxWidth: '100%',
+        boxSizing: 'border-box',
     };
 
     const headerText: React.CSSProperties = {
