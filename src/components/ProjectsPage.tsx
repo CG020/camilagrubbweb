@@ -54,7 +54,7 @@ const ProjectsPage = () => {
         <div>
             <NavBar message={'my work so far'} tabs={['completed','in progress','workflow']}/>
             <h1 style={projHeader}><i>completed projects.</i></h1>
-            <div style={projSection} className="fadeInSection">
+            <section id="completed"> <div style={projSection} className="fadeInSection">
             <div className="card text-bg-dark">
                 <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
@@ -62,7 +62,7 @@ const ProjectsPage = () => {
                     <p className="card-text">placeholder</p>
                     <p className="card-text"><small>extra note</small></p>
                 </div>
-            </div>
+            </div> 
             </div>
 
             <div style={projSection} className="fadeInSection">
@@ -75,11 +75,11 @@ const ProjectsPage = () => {
                     <p className="card-text"><small>Repository found on GitHub</small></p>
                 </div>
             </div>
-            </div>
+            </div> </section>
 
             <h1 style={projHeader}><i>in progress.</i></h1>
 
-            <div style={projSection} className="fadeInSection">
+            <section id="in progress"> <div style={projSection} className="fadeInSection">
             <div className="card text-bg-dark">
                 <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
@@ -89,8 +89,8 @@ const ProjectsPage = () => {
                     finalize that decision.<table></table></p>
                     <p className="card-text"><small>Repository found on GitHub</small></p>
                 </div>
-            </div>
-            </div>
+            </div> 
+            </div> </section>
 
             <h1 style={projHeader}><i>project workflow.</i></h1>
         </div>

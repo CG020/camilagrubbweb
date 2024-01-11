@@ -4,9 +4,9 @@ function NavBar( { message, tabs }) {
       <div className="container-fluid">
         <a className="navbar-brand">{message}</a>
         <ul className="nav nav-underline">
-                {tabs.map((tabs, index) => (
-                    <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#" key={index}>{tabs}</a>
+                {tabs.map((tab, index) => (
+                    <li className="nav-item" key={index}>
+                    <a className="nav-link active" aria-current="page" href={'#${tab}'}>{tab}</a>
                     </li> 
                 ))}
           </ul>

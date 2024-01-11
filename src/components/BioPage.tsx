@@ -74,7 +74,7 @@ const BioPage = () => {
             </div>
             <div>
                 <Divider title="Academics" align1='20px' align2='0px'></Divider>
-                <div style={bioSection} className="fadeInSection">
+                <section id="academics"> <div style={bioSection} className="fadeInSection">
                 <p style={bioText}> As a Computer Science student at UA, I've cultivated my skills in 
                 many languages including Python, Java, Javascript, and C. Many projects I completed
                 in my classes are included on my Github profile and explained under the 'Projects' section of
@@ -87,10 +87,10 @@ const BioPage = () => {
                 tools into the workplace is advantagious for improving business efficency.  
                 </p>
                 <img src="src\assets\UALogo.jpg" className="college-image" alt="college" style={bioImage} />
-                </div>
+                </div> </section>
 
                 <Divider title="Research" align1='auto' align2='20px'></Divider>
-                <div style={bioSection} className="fadeInSection">
+                <section id="research"> <div style={bioSection} className="fadeInSection">
                 <img src="src\assets\sarverImage.jpg" className="sarver-image" alt="sarver" style={bioImage} />
                 <p style={bioText}> I have experience in working on collaborative research and data analysis from ongoing work at the Banner Medical
                 Center under the University of Arizona. I work with several UA students on various experiments spanning Physiology to Artificial Intelligence.
@@ -104,10 +104,10 @@ const BioPage = () => {
                 oppurtunity to work in interdisciplinary settings with a great and knowledgeable group of people. I've been exposed to the crucialness of introducing 
                 technical expertise in research settings for greater efficiency.
                 </p>
-                </div>
+                </div> </section>
 
                 <Divider title="Experience" align1='20px' align2='0px'></Divider>
-                <div style={bioSection} className="fadeInSection">
+                <section id="experience"> <div style={bioSection} className="fadeInSection">
                 <p style={bioText}> Outside my research projects at Banner, I've worked as a project Desiner Intern for the UA Design Lab where
                 my responsibility was to design the steps for completing long term projects that come in the form of a research endeavor ending in a
                 paper or an end tangible product. I work with a team directing members through the steps of the software design plan, facilitate communication between 
@@ -115,10 +115,10 @@ const BioPage = () => {
                 Project Management is a skill I have been developing on my own time and in work. I believe string communication and clear, soldified planning is the 
                 key to a successful collabotation that will result in the optimal end goal.
                 </p>
-                </div>
+                </div> </section>
 
                 <Divider title="Personal Learning" align1='auto' align2='20px'></Divider>
-                <div style={bioSection} className="fadeInSection">
+                <section id="personal"> <div style={bioSection} className="fadeInSection">
                 <p style={bioText}> While enhancing my experience and skills in the academic sphere, I also find it both gratifying and educational to 
                 undertake my own projects not connected to a professional setting. For technical skills, I have several ongoing and completed projects 
                 that I began because I believe using coding languages in practice is the best way to not only learn new languages but also reinforce the skills
@@ -129,7 +129,7 @@ const BioPage = () => {
                 under the 'Play' section in the homepage!<br></br><br></br> I've recently gotten into photography partially fueled by my love of travel. I feature a lot
                 of my photos on this webpage and will continue to research it as an interest. 
                 </p>
-                </div>
+                </div> </section>
             </div>
         </div>
     );
