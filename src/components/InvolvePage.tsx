@@ -4,7 +4,7 @@ const InvolvePage = () => {
 
     return(
         <div>
-            <NavBar message={'Involvement in the community . . .'}/>
+            <NavBar message={'involvement in the community'} tabs={['university', 'volunteer']}/>
         </div>
     );
 }

@@ -70,8 +70,8 @@ const ProjectsPage = () => {
                 <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" >This Website</h5>
-                    <p className="card-text">This website was created from scratch as a side project I can update at 
-                    leisure so I can document my projects.</p>
+                    <p className="card-text">This website was created from scratch as a side project for frontend development
+                    skills cultivation. A place where I can document my projects and update periodically.</p>
                     <p className="card-text"><small>Repository found on GitHub</small></p>
                 </div>
             </div>
