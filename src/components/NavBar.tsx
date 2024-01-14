@@ -6,7 +6,7 @@ function NavBar( { message, tabs }) {
         <ul className="nav nav-underline">
                 {tabs.map((tab, index) => (
                     <li className="nav-item" key={index}>
-                    <a className="nav-link active" aria-current="page" href={'#${tab}'}>{tab}</a>
+                    <a className="nav-link active" aria-current="page" href={`#${tab.toLowerCase()}`}>{tab}</a>
                     </li> 
                 ))}
           </ul>

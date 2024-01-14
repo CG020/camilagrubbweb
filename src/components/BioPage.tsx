@@ -6,9 +6,10 @@ const BioPage = () => {
 
     const bioSection: React.CSSProperties = {
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'center',
-        padding: '20px',
+        alignItems: 'center',
+        padding: '15px',
         boxSizing: 'border-box',
     };
 
@@ -78,8 +79,8 @@ const BioPage = () => {
                 </p>
             </div>
             <div>
-                <Divider title="Academics" align1='20px' align2='0px'></Divider>
-                <section id="academics"> <div style={bioSection} className="fadeInSection">
+                <section id="academics"> <Divider title="Academics" align1='20px' align2='0px'></Divider>
+                <div style={bioSection} className="fadeInSection">
                 <p style={bioText}> As a Computer Science student at UA, I've cultivated my skills in 
                 many languages including Python, Java, Javascript, and C. Many projects I completed
                 in my classes are included on my Github profile and explained under the 'Projects' section of
@@ -94,8 +95,8 @@ const BioPage = () => {
                 <img src="src\assets\UALogo.jpg" className="college-image" alt="college" style={bioImage} />
                 </div> </section>
 
-                <Divider title="Research" align1='auto' align2='20px'></Divider>
-                <section id="research"> <div style={bioSection} className="fadeInSection">
+                <section id="research"> <Divider title="Research" align1='auto' align2='20px'></Divider>
+                <div style={bioSection} className="fadeInSection">
                 <img src="src\assets\sarverImage.jpg" className="sarver-image" alt="sarver" style={bioImage} />
                 <p style={bioText}> I have experience in working on collaborative research and data analysis from ongoing work at the Banner Medical
                 Center under the University of Arizona. I work with several UA students on various experiments spanning Physiology to Artificial Intelligence.
@@ -111,8 +112,8 @@ const BioPage = () => {
                 </p>
                 </div> </section>
 
-                <Divider title="Experience" align1='20px' align2='0px'></Divider>
-                <section id="experience"> <div style={bioSection} className="fadeInSection">
+                <section id="experience"> <Divider title="Experience" align1='20px' align2='0px'></Divider>
+                <div style={bioSection} className="fadeInSection">
                 <p style={bioText}> Outside my research projects at Banner, I've worked as a project Desiner Intern for the UA Design Lab where
                 my responsibility was to design the steps for completing long term projects that come in the form of a research endeavor ending in a
                 paper or an end tangible product. I work with a team directing members through the steps of the software design plan, facilitate communication between 
@@ -122,8 +123,8 @@ const BioPage = () => {
                 </p>
                 </div> </section>
 
-                <Divider title="Personal Learning" align1='auto' align2='20px'></Divider>
-                <section id="personal"> <div style={bioSection} className="fadeInSection">
+                <section id="personal"> <Divider title="Personal Learning" align1='auto' align2='20px'></Divider>
+                <div style={bioSection} className="fadeInSection">
                 <p style={bioText}> While enhancing my experience and skills in the academic sphere, I also find it both gratifying and educational to 
                 undertake my own projects not connected to a professional setting. For technical skills, I have several ongoing and completed projects 
                 that I began because I believe using coding languages in practice is the best way to not only learn new languages but also reinforce the skills

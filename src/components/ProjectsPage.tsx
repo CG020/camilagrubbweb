@@ -53,8 +53,8 @@ const ProjectsPage = () => {
     return(
         <div>
             <NavBar message={'my work so far'} tabs={['completed','in progress','workflow']}/>
-            <h1 style={projHeader}><i>completed projects.</i></h1>
-            <section id="completed"> <div style={projSection} className="fadeInSection">
+            <section id="completed"> <h1 style={projHeader}><i>completed projects.</i></h1>
+            <div style={projSection} className="fadeInSection">
             <div className="card text-bg-dark">
                 <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
@@ -77,9 +77,9 @@ const ProjectsPage = () => {
             </div>
             </div> </section>
 
-            <h1 style={projHeader}><i>in progress.</i></h1>
+            <section id="in progress"> <h1 style={projHeader}><i>in progress.</i></h1>
 
-            <section id="in progress"> <div style={projSection} className="fadeInSection">
+            <div style={projSection} className="fadeInSection">
             <div className="card text-bg-dark">
                 <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
@@ -92,8 +92,7 @@ const ProjectsPage = () => {
             </div> 
             </div> </section>
 
-            <h1 style={projHeader}><i>project workflow.</i></h1>
-            <section id="workflow">
+            <section id="workflow"> <h1 style={projHeader}><i>project workflow.</i></h1>
             <div className="card text-bg-dark">
             <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
             <div className="card-img-overlay">
