@@ -7,8 +7,10 @@ const ProjectsPage = () => {
 
     const projSection: React.CSSProperties = {
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         padding: '20px',
+        alignItems: 'center',
+        flexWrap: 'wrap',
     };
 
     const projHeader: React.CSSProperties = {
@@ -18,6 +20,8 @@ const ProjectsPage = () => {
         fontFamily: 'playfair display',
         color: '#a2a2a2a0',
         fontSize: '70px',
+        marginBottom: '30px',
+        marginTop: '30px',
     };
 
     const projText: React.CSSProperties = {
@@ -28,16 +32,22 @@ const ProjectsPage = () => {
         marginTop: '35px',
     };
 
+    const cardStyle = {
+        width: '45%',
+        height: '250px',
+        margin: '0 auto',
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             const sections = document.querySelectorAll('.fadeInSection');
     
             sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const sectionBottom = section.getBoundingClientRect().bottom;
-                const partiallyInView = sectionTop < window.innerHeight && sectionBottom >= 0;
+                const top = section.getBoundingClientRect().top;
+                const bottom = section.getBoundingClientRect().bottom;
+                const middle = top < window.innerHeight && bottom >= 0;
                 
-                if (partiallyInView) {
+                if (middle) {
                     section.classList.add('isVisible');
                 } else {
                     section.classList.remove('isVisible');
@@ -56,7 +66,7 @@ const ProjectsPage = () => {
             <NavBar message={'my work so far'} tabs={['completed','in progress','workflow']}/>
             <section id="completed"> <h1 style={projHeader}><i>completed projects.</i></h1>
             <div style={projSection} className="fadeInSection">
-            <div className="card text-bg-dark">
+            <div className="card text-bg-dark" style={cardStyle}>
                 <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" >Project</h5>
@@ -64,10 +74,8 @@ const ProjectsPage = () => {
                     <p className="card-text"><small>extra note</small></p>
                 </div>
             </div> 
-            </div>
 
-            <div style={projSection} className="fadeInSection">
-            <div className="card text-bg-dark">
+            <div className="card text-bg-dark" style={cardStyle}>
                 <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" >This Website</h5>
@@ -81,7 +89,7 @@ const ProjectsPage = () => {
             <section id="in progress"> <h1 style={projHeader}><i>in progress.</i></h1>
 
             <div style={projSection} className="fadeInSection">
-            <div className="card text-bg-dark">
+            <div className="card text-bg-dark" style={cardStyle}>
                 <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" >Dining Out</h5>
@@ -94,7 +102,7 @@ const ProjectsPage = () => {
             </div> </section>
 
             <section id="workflow"> <h1 style={projHeader}><i>project workflow.</i></h1>
-            <div className="card text-bg-dark">
+            <div className="card text-bg-dark" style={cardStyle}>
             <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
             <div className="card-img-overlay">
                 <h5 className="card-title" >Project Workflow</h5>
