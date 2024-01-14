@@ -1,5 +1,6 @@
 import Divider from "./Divider";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 import { useEffect } from 'react';
 
 const BioPage = () => {
@@ -68,7 +69,7 @@ const BioPage = () => {
 
     return(
         <div>
-            <NavBar message={'my journey so far.'} tabs={['academics','research','experience','personal']}/>
+            <NavBar message={'my journey so far'} tabs={['academics','research','experience','personal']}/>
             <h1 style={headerText}><i><b>Hi! My name is<br></br> Camila Grubb</b></i></h1>
             <div style={bioSection} className="fadeInSection">
                 <img src="src\assets\bioProfile.jpg" className="profile-image" alt="BioProfile" style={bioImage} />
@@ -121,6 +122,7 @@ const BioPage = () => {
                 Project Management is a skill I have been developing on my own time and in work. I believe string communication and clear, soldified planning is the 
                 key to a successful collabotation that will result in the optimal end goal.
                 </p>
+                <img src="src\assets\experienceImage.jpg" className="exper-image" alt="exper" style={bioImage} />
                 </div> </section>
 
                 <section id="personal"> <Divider title="Personal Learning" align1='auto' align2='20px'></Divider>
@@ -137,6 +139,8 @@ const BioPage = () => {
                 </p>
                 </div> </section>
             </div>
+
+            <Footer song='Ocean Drive by Duke Dumont' book='Mythology by Edith Hamilton' doing='coding'></Footer>
         </div>
     );
 }

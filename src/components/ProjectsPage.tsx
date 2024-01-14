@@ -1,5 +1,6 @@
 import Divider from "./Divider";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 import { useEffect } from 'react';
 
 const ProjectsPage = () => {
@@ -102,6 +103,8 @@ const ProjectsPage = () => {
                 <p className="card-text"><small>Goal is high efficiency!</small></p>
             </div>
             </div> </section>
+
+            <Footer song='Ocean Drive by Duke Dumont' book='Mythology by Edith Hamilton' doing='coding'></Footer>
         </div>
     );
 }
