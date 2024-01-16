@@ -43,6 +43,10 @@ const ProjectsPage = () => {
         zIndex: '1',
     };
 
+    const imageStyle = {
+        height:'100%',
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             const sections = document.querySelectorAll('.fadeInSection');
@@ -66,7 +70,7 @@ const ProjectsPage = () => {
     }, []);
 
 
-    const [isCollapsed, setIsCollapsed] = useState(true);
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
     const toggleCollapse = () => {
         setIsCollapsed(!isCollapsed);
@@ -93,7 +97,7 @@ const ProjectsPage = () => {
             <section id="completed"> <h1 style={projHeader}><i>completed projects.</i></h1>
             <div style={projSection} className="fadeInSection">
                 <div className="card text-bg-dark" style={cardStyle} onClick={toggleCollapse}>
-                    <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
+                    <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                     <div className={"card-img-overlay"}>
                         <h5 className="card-title" style={projTitle}>This Website</h5>
                         <p className="card-text" style={projText}>This website was created from scratch as a side project for frontend development
@@ -112,20 +116,44 @@ const ProjectsPage = () => {
 
             <div style={projSection} className="fadeInSection">
             <div className="card text-bg-dark" style={cardStyle} onClick={toggleCollapse}>
-                <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
+                <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" style={projTitle}>Dining Out</h5>
-                    <p className="card-text" style={projText}>Deciding where to dine that would satisfy all peoples in a party 
-                    can be difficult. Dining Out is an idea to make a one source webscraping search that can
-                    finalize that decision.<table></table></p>
-                    <p className="card-text"><small>Repository found on GitHub</small></p>
-                </div>
+                    <p className="card-text" style={projText}>Dining Out is an idea to make a one source webscraping search that can
+                    finalize deciding where to dine that would satisfy all peoples in a party.
+                    <table></table></p>
+                    <p className="card-text"><small>Repository found on GitHub</small><br></br>
+                    <small>Click here to view</small></p></div>
+                <div style={collapseStyle}>
+                    This project not only cultivated my skills in designing independent tools using hosting
+                    sources such as Netlify in this case, but it also helped me practice filtering algorithms 
+                    and webscraping.
+                </div> 
             </div> 
+            
+            <div className="card text-bg-dark" style={cardStyle} onClick={toggleCollapse}>
+                <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
+                <div className="card-img-overlay">
+                    <h5 className="card-title" style={projTitle}>Abstract Scroll</h5>
+                    <p className="card-text" style={projText}>
+                        A dynamic website where scrolling takes you through a narrative.
+                    <table></table></p>
+                    <p className="card-text"><small>Repository found on GitHub</small><br></br>
+                    <small>Click here to view</small></p>
+                </div>
+                <div style={collapseStyle}>
+                This project is practice dynamic website design using fluid CSS and JavaScript. 
+                        The site is intended for the viewer to continuously scroll to progress and occasionally interact with
+                        objects on the site for a storytelling and visually exciting experience. This is a test of coding skills 
+                        and artisitic thinking.
+                </div> 
+            </div>
+            
             </div> </section>
 
             <section id="workflow"> <h1 style={projHeader}><i>project workflow.</i></h1>
             <div className="card text-bg-dark" style={cardStyle}>
-            <img src="src\assets\windowImage.jpg" className="card-img" alt="card"></img>
+            <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
             <div className="card-img-overlay">
                 <h5 className="card-title" style={projTitle}>Project Workflow</h5>
                 <p className="card-text" style={projText}>How I go about the project design process - employed based on experience.
