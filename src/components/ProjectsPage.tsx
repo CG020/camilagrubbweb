@@ -35,18 +35,20 @@ const ProjectsPage = () => {
         fontSize: '30px',
     };
 
-    const cardStyle = {
-        width: '45%',
-        height: '250px',
-        margin: '0 auto',
-        position: 'relative',
-        zIndex: '1',
-    };
-
     const imageStyle = {
         height:'100%',
     }
 
+    const cardStyle = {
+        width: '45vw',
+        height: '55vh',
+        margin: '0 auto',
+        position: 'relative',
+        zIndex: '1',
+        transition: 'all 0.4s ease', 
+    };
+
+    // fading animation between sections
     useEffect(() => {
         const handleScroll = () => {
             const sections = document.querySelectorAll('.fadeInSection');
@@ -70,33 +72,35 @@ const ProjectsPage = () => {
     }, []);
 
 
-    const [isCollapsed, setIsCollapsed] = useState(false);
-
-    const toggleCollapse = () => {
-        setIsCollapsed(!isCollapsed);
+    // collapsing content
+    const [isCollapsed, setIsCollapsed] = useState(null);
+    const toggleCollapse = (cardNum) => {
+        setIsCollapsed(isCollapsed === cardNum ? null : cardNum);
     };
 
-    const collapseStyle: React.CSSProperties = {
+    const collapseStyle = (cardNum) => ({
+        display: 'flex',
         transition: 'transform 0.4s ease',
         overflow: 'hidden',
         zIndex: -1,
         position: 'absolute',
-        left: '100%',
-        top: 0,
+        left: '105%',
+        top: '20px',
         width: '400px',
-        transform: isCollapsed ? 'translateX(0)' : 'translateX(-100%)',
+        transform: isCollapsed === cardNum ? 'translateX(0)' : 'translateX(-100%)',
         fontFamily: 'monospace',
         padding: '15px',
         border: 'solid',
-        visibility: isCollapsed ? 'visible' : 'hidden',
-    }
+        visibility: isCollapsed === cardNum ? 'visible' : 'hidden',
+        flexWrap: 'wrap',
+    });
 
     return(
         <div>
-            <NavBar message={'my work so far'} tabs={['completed','in progress','workflow']}/>
+            <NavBar message={'my work so far as an undergrad'} tabs={['completed','in progress','workflow']}/>
             <section id="completed"> <h1 style={projHeader}><i>completed projects.</i></h1>
             <div style={projSection} className="fadeInSection">
-                <div className="card text-bg-dark" style={cardStyle} onClick={toggleCollapse}>
+                <div className="card text-bg-dark" style={cardStyle} onClick={() => toggleCollapse('c1')}>
                     <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                     <div className={"card-img-overlay"}>
                         <h5 className="card-title" style={projTitle}>This Website</h5>
@@ -104,7 +108,7 @@ const ProjectsPage = () => {
                         skills cultivation.</p>
                         <p className="card-text"><small>Repository found on GitHub</small></p>
                     </div>
-                <div style={collapseStyle}>
+                <div style={collapseStyle('c1')}>
                         A place where I can document my projects and update periodically. This project utilizes 
                         HTML, CSS, and JavaScript for construction and ReactJS for efficient component organization. Familiarity 
                         with these languages and how they interect with each other helps strengthen my web development skillset.
@@ -115,7 +119,7 @@ const ProjectsPage = () => {
             <section id="in progress"> <h1 style={projHeader}><i>in progress.</i></h1>
 
             <div style={projSection} className="fadeInSection">
-            <div className="card text-bg-dark" style={cardStyle} onClick={toggleCollapse}>
+            <div className="card text-bg-dark" style={cardStyle} onClick={() =>  toggleCollapse('p1')}>
                 <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" style={projTitle}>Dining Out</h5>
@@ -124,14 +128,14 @@ const ProjectsPage = () => {
                     <table></table></p>
                     <p className="card-text"><small>Repository found on GitHub</small><br></br>
                     <small>Click here to view</small></p></div>
-                <div style={collapseStyle}>
+                <div style={collapseStyle('p1')}>
                     This project not only cultivated my skills in designing independent tools using hosting
                     sources such as Netlify in this case, but it also helped me practice filtering algorithms 
                     and webscraping.
                 </div> 
             </div> 
             
-            <div className="card text-bg-dark" style={cardStyle} onClick={toggleCollapse}>
+            <div className="card text-bg-dark" style={cardStyle} onClick={() => toggleCollapse('p2')}>
                 <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" style={projTitle}>Abstract Scroll</h5>
@@ -141,7 +145,7 @@ const ProjectsPage = () => {
                     <p className="card-text"><small>Repository found on GitHub</small><br></br>
                     <small>Click here to view</small></p>
                 </div>
-                <div style={collapseStyle}>
+                <div style={collapseStyle('p2')}>
                 This project is practice dynamic website design using fluid CSS and JavaScript. 
                         The site is intended for the viewer to continuously scroll to progress and occasionally interact with
                         objects on the site for a storytelling and visually exciting experience. This is a test of coding skills 
@@ -152,7 +156,7 @@ const ProjectsPage = () => {
             </div> </section>
 
             <section id="workflow"> <h1 style={projHeader}><i>project workflow.</i></h1>
-            <div className="card text-bg-dark" style={cardStyle}>
+            <div className="card text-bg-dark" style={cardStyle} onClick={() => toggleCollapse('w1')}>
             <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
             <div className="card-img-overlay">
                 <h5 className="card-title" style={projTitle}>Project Workflow</h5>
@@ -160,6 +164,9 @@ const ProjectsPage = () => {
                 <table></table></p>
                 <p className="card-text"><small>Goal is high efficiency!</small></p>
             </div>
+            <div style={collapseStyle('w1')}>
+                Steps:
+                </div> 
             </div> </section>
 
             <Footer song='Ocean Drive by Duke Dumont' book='Mythology by Edith Hamilton' doing='coding'></Footer>
