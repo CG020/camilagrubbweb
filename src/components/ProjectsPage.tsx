@@ -5,49 +5,6 @@ import { useEffect, useState } from 'react';
 
 const ProjectsPage = () => {
 
-    const projSection: React.CSSProperties = {
-        display: 'flex',
-        justifyContent: 'space-around',
-        padding: '20px',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-    };
-
-    const projHeader: React.CSSProperties = {
-        marginLeft: '5px',
-        padding: '30px',
-        textAlign: 'center',
-        fontFamily: 'playfair display',
-        color: '#a2a2a2a0',
-        fontSize: '70px',
-        marginBottom: '30px',
-        marginTop: '30px',
-    };
-
-    const projText: React.CSSProperties = {
-        fontFamily: 'monospace',
-        fontSize: '16px',
-        marginLeft: '10px',
-    };
-
-    const projTitle: React.CSSProperties = {
-        fontFamily: 'monospace',
-        fontSize: '30px',
-    };
-
-    const imageStyle = {
-        height:'100%',
-    }
-
-    const cardStyle = {
-        width: '45vw',
-        height: '55vh',
-        margin: '0 auto',
-        position: 'relative',
-        zIndex: '1',
-        transition: 'all 0.4s ease', 
-    };
-
     // fading animation between sections
     useEffect(() => {
         const handleScroll = () => {
@@ -78,8 +35,53 @@ const ProjectsPage = () => {
         setIsCollapsed(isCollapsed === cardNum ? null : cardNum);
     };
 
-    const collapseStyle = (cardNum) => ({
+    const projSection = (cardNum) => ({
         display: 'flex',
+        justifyContent: 'space-around',
+        padding: '20px',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        flexDirection: isCollapsed === cardNum ? 'column': 'row',
+    });
+
+    const projHeader: React.CSSProperties = {
+        marginLeft: '5px',
+        padding: '30px',
+        textAlign: 'center',
+        fontFamily: 'playfair display',
+        color: '#a2a2a2a0',
+        fontSize: '70px',
+        marginBottom: '30px',
+        marginTop: '30px',
+    };
+
+    const projText: React.CSSProperties = {
+        fontFamily: 'monospace',
+        fontSize: '16px',
+        marginLeft: '10px',
+    };
+
+    const projTitle: React.CSSProperties = {
+        fontFamily: 'monospace',
+        fontSize: '30px',
+    };
+
+    const imageStyle = {
+        height:'100%',
+    }
+
+    const cardStyle = (cardNum) => ({
+        width: '45vw',
+        height: '55vh',
+        margin: '0 auto',
+        // position: isCollapsed == cardNum ? 'relative': 'relative',
+        position: 'relative',
+        zIndex: '1',
+        transition: 'all 0.4s ease', 
+        marginBottom: '20px',
+    });
+
+    const collapseStyle = (cardNum) => ({
         transition: 'transform 0.4s ease',
         overflow: 'hidden',
         zIndex: -1,
@@ -91,16 +93,15 @@ const ProjectsPage = () => {
         fontFamily: 'monospace',
         padding: '15px',
         border: 'solid',
-        visibility: isCollapsed === cardNum ? 'visible' : 'hidden',
-        flexWrap: 'wrap',
+        visibility: isCollapsed === cardNum ? 'visible' : 'collapse',
     });
 
     return(
         <div>
             <NavBar message={'my work so far as an undergrad'} tabs={['completed','in progress','workflow']}/>
             <section id="completed"> <h1 style={projHeader}><i>completed projects.</i></h1>
-            <div style={projSection} className="fadeInSection">
-                <div className="card text-bg-dark" style={cardStyle} onClick={() => toggleCollapse('c1')}>
+            <div style={projSection('c1')} className="fadeInSection">
+                <div className="card text-bg-dark" style={cardStyle('c1')} onClick={() => toggleCollapse('c1')}>
                     <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                     <div className={"card-img-overlay"}>
                         <h5 className="card-title" style={projTitle}>This Website</h5>
@@ -118,8 +119,8 @@ const ProjectsPage = () => {
 
             <section id="in progress"> <h1 style={projHeader}><i>in progress.</i></h1>
 
-            <div style={projSection} className="fadeInSection">
-            <div className="card text-bg-dark" style={cardStyle} onClick={() =>  toggleCollapse('p1')}>
+            <div style={projSection('p1')} className="fadeInSection">
+            <div className="card text-bg-dark" style={cardStyle('p1')} onClick={() =>  toggleCollapse('p1')}>
                 <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" style={projTitle}>Dining Out</h5>
@@ -135,7 +136,7 @@ const ProjectsPage = () => {
                 </div> 
             </div> 
             
-            <div className="card text-bg-dark" style={cardStyle} onClick={() => toggleCollapse('p2')}>
+            <div className="card text-bg-dark" style={cardStyle('p2')} onClick={() => toggleCollapse('p2')}>
                 <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
                     <h5 className="card-title" style={projTitle}>Abstract Scroll</h5>
@@ -156,7 +157,8 @@ const ProjectsPage = () => {
             </div> </section>
 
             <section id="workflow"> <h1 style={projHeader}><i>project workflow.</i></h1>
-            <div className="card text-bg-dark" style={cardStyle} onClick={() => toggleCollapse('w1')}>
+            <div style={projSection('w1')} className="fadeInSection">
+            <div className="card text-bg-dark" style={cardStyle('w1')} onClick={() => toggleCollapse('w1')}>
             <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
             <div className="card-img-overlay">
                 <h5 className="card-title" style={projTitle}>Project Workflow</h5>
@@ -167,7 +169,7 @@ const ProjectsPage = () => {
             <div style={collapseStyle('w1')}>
                 Steps:
                 </div> 
-            </div> </section>
+            </div> </div> </section>
 
             <Footer song='Ocean Drive by Duke Dumont' book='Mythology by Edith Hamilton' doing='coding'></Footer>
         </div>
