@@ -162,12 +162,18 @@ const ProjectsPage = () => {
             <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
             <div className="card-img-overlay">
                 <h5 className="card-title" style={projTitle}>Project Workflow</h5>
-                <p className="card-text" style={projText}>How I go about the project design process - employed based on experience.
+                <p className="card-text" style={projText}>Brief steps on how I go about the project design process - employed based on experience.
                 <table></table></p>
-                <p className="card-text"><small>Goal is high efficiency!</small></p>
+                <p className="card-text"><small>- - -</small></p>
             </div>
             <div style={collapseStyle('w1')}>
-                Steps:
+                Steps: <br></br>1. Identification of problem - <i>Can it be solved technologically?</i> <br></br>
+                2. Decision of appropriate strcuture - <i>What language best suits the task? Is the solution an application 
+                or a script? User friendly necessity?</i> <br></br>
+                3. Planning details stage - <i>What is needed in the program? What is the optimal overarching structure and synthesis of components?
+                    How to promote space efficiency and clean code?</i> <br></br>
+                4. Testing - <i>Does it work? Does it work efficiently? Can it be improved? Do outside party testers approve?</i> <br></br>
+                5. Improve project anyway.
                 </div> 
             </div> </div> </section>
 
