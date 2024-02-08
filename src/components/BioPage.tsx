@@ -2,12 +2,23 @@ import Divider from "./Divider";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useEffect } from 'react';
+import { useState } from 'react';
 
 const BioPage = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const bioSection: React.CSSProperties = {
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: isMobile ? 'column' : 'row',
         justifyContent: 'center',
         alignItems: 'center',
         padding: '15px',
@@ -71,7 +82,7 @@ const BioPage = () => {
         <div>
             <NavBar message={'my journey so far'} tabs={['academics','research','experience','personal']}/>
             <h1 style={headerText}><i><b>Hi! My name is<br></br> Camila Grubb</b></i></h1>
-            <div style={bioSection} className="fadeInSection">
+            <div style={bioSection} className="fadeInSection responsive-section">
                 <img src="src\assets\bioProfile.jpg" className="profile-image" alt="BioProfile" style={bioImage} />
                 <p style={bioText}>I am a current alumni at the University of Arizona completing my B.S. in Computer Science, my
                     minor in Business Administration at Eller College, and my certification in Cybersecurity at UA South.<br></br>
@@ -81,7 +92,7 @@ const BioPage = () => {
             </div>
             <div>
                 <section id="academics"> <Divider title="Academics" align1='20px' align2='0px'></Divider>
-                <div style={bioSection} className="fadeInSection">
+                <div style={bioSection} className="fadeInSection responsive-section">
                 <p style={bioText}> As a Computer Science student at UA, I've cultivated my skills in 
                 many languages including Python, Java, Javascript, and C. Many projects I completed
                 in my classes are included on my Github profile and explained under the 'Projects' section of
@@ -97,7 +108,7 @@ const BioPage = () => {
                 </div> </section>
 
                 <section id="research"> <Divider title="Research" align1='auto' align2='20px'></Divider>
-                <div style={bioSection} className="fadeInSection">
+                <div style={bioSection} className="fadeInSection responsive-section">
                 <img src="src\assets\sarverImage.jpg" className="sarver-image" alt="sarver" style={bioImage} />
                 <p style={bioText}> I have experience in working on collaborative research and data analysis from ongoing work at the Banner Medical
                 Center under the University of Arizona. I work with several UA students on various experiments spanning Physiology to Artificial Intelligence.
@@ -114,7 +125,7 @@ const BioPage = () => {
                 </div> </section>
 
                 <section id="experience"> <Divider title="Experience" align1='20px' align2='0px'></Divider>
-                <div style={bioSection} className="fadeInSection">
+                <div style={bioSection} className="fadeInSection responsive-section">
                 <p style={bioText}> Outside my research projects at Banner, I've worked as a project Desiner Intern for the UA Design Lab where
                 my responsibility was to design the steps for completing long term projects that come in the form of a research endeavor ending in a
                 paper or an end tangible product. I work with a team directing members through the steps of the software design plan, facilitate communication between 
@@ -126,7 +137,7 @@ const BioPage = () => {
                 </div> </section>
 
                 <section id="personal"> <Divider title="Personal Learning" align1='auto' align2='20px'></Divider>
-                <div style={bioSection} className="fadeInSection">
+                <div style={bioSection} className="fadeInSection responsive-section">
                 <p style={bioText}> While enhancing my experience and skills in the academic sphere, I also find it both gratifying and educational to 
                 undertake my own projects not connected to a professional setting. For technical skills, I have several ongoing and completed projects 
                 that I began because I believe using coding languages in practice is the best way to not only learn new languages but also reinforce the skills

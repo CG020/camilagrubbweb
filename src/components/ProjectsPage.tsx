@@ -2,8 +2,16 @@ import Divider from "./Divider";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useEffect, useState } from 'react';
+import React, { useRef } from 'react';
+
 
 const ProjectsPage = () => {
+    const sectionRefs = {
+        c1: useRef(null),
+        p1: useRef(null),
+        p2: useRef(null),
+        w1: useRef(null),
+    };
 
     // fading animation between sections
     useEffect(() => {
@@ -33,6 +41,11 @@ const ProjectsPage = () => {
     const [isCollapsed, setIsCollapsed] = useState(null);
     const toggleCollapse = (cardNum) => {
         setIsCollapsed(isCollapsed === cardNum ? null : cardNum);
+        if (isCollapsed !== cardNum) {
+            setTimeout(() => {
+                sectionRefs[cardNum].current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 400); 
+        }
     };
 
     const projSection = (cardNum) => ({
@@ -74,7 +87,6 @@ const ProjectsPage = () => {
         width: '45vw',
         height: '55vh',
         margin: '0 auto',
-        // position: isCollapsed == cardNum ? 'relative': 'relative',
         position: 'relative',
         zIndex: '1',
         transition: 'all 0.4s ease', 
@@ -82,25 +94,19 @@ const ProjectsPage = () => {
     });
 
     const collapseStyle = (cardNum) => ({
-        transition: 'transform 0.4s ease',
+        transition: 'max-height 0.4s ease, padding 0.4s ease',
         overflow: 'hidden',
-        zIndex: -1,
-        position: 'absolute',
-        left: '105%',
-        top: '20px',
-        width: '400px',
-        transform: isCollapsed === cardNum ? 'translateX(0)' : 'translateX(-100%)',
-        fontFamily: 'monospace',
-        padding: '15px',
-        border: 'solid',
-        visibility: isCollapsed === cardNum ? 'visible' : 'collapse',
+        maxHeight: isCollapsed === cardNum ? '500px' : '0',
+        padding: isCollapsed === cardNum ? '15px' : '0px',
+        border: isCollapsed === cardNum ? 'solid' : 'none',
+        visibility: 'visible',
     });
 
     return(
         <div>
             <NavBar message={'my work so far as an undergrad'} tabs={['completed','in progress','workflow']}/>
             <section id="completed"> <h1 style={projHeader}><i>completed projects.</i></h1>
-            <div style={projSection('c1')} className="fadeInSection">
+            <div ref={sectionRefs['c1']} style={projSection('c1')} className="fadeInSection">
                 <div className="card text-bg-dark" style={cardStyle('c1')} onClick={() => toggleCollapse('c1')}>
                     <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                     <div className={"card-img-overlay"}>
@@ -119,7 +125,7 @@ const ProjectsPage = () => {
 
             <section id="in progress"> <h1 style={projHeader}><i>in progress.</i></h1>
 
-            <div style={projSection('p1')} className="fadeInSection">
+            <div ref={sectionRefs['p1']} style={projSection('p1')} className="fadeInSection">
             <div className="card text-bg-dark" style={cardStyle('p1')} onClick={() =>  toggleCollapse('p1')}>
                 <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
                 <div className="card-img-overlay">
@@ -157,7 +163,7 @@ const ProjectsPage = () => {
             </div> </section>
 
             <section id="workflow"> <h1 style={projHeader}><i>project workflow.</i></h1>
-            <div style={projSection('w1')} className="fadeInSection">
+            <div ref={sectionRefs['w1']} style={projSection('w1')} className="fadeInSection">
             <div className="card text-bg-dark" style={cardStyle('w1')} onClick={() => toggleCollapse('w1')}>
             <img src="src\assets\windowImage.jpg" style={imageStyle} className="card-img" alt="card"></img>
             <div className="card-img-overlay">

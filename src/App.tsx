@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 /*all component imports*/ 
@@ -77,6 +78,8 @@ function App() {
                 content="photography from my travels"
               /> </Link>
           </div>
+
+          <Footer song='Ocean Drive by Duke Dumont' book='Mythology by Edith Hamilton' doing='coding'></Footer>
         </div>
         } />
         <Route path="/contact" element={<ContactPage />} />
