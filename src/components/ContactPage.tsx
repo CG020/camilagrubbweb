@@ -1,6 +1,7 @@
 
 import NavBar from "./NavBar";
 import Panel from "./Panel";
+import Footer from "./Footer";
 
 const ContactPage = () => {
     const contactStyle: React.CSSProperties = {
@@ -38,6 +39,8 @@ const ContactPage = () => {
                 onClick={null}
             />
         </div>
+
+        <Footer song='Ocean Drive by Duke Dumont' book='Mythology by Edith Hamilton' doing='coding'></Footer>
     </div>
     );
 };

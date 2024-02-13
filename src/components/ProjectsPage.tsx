@@ -13,7 +13,10 @@ const ProjectsPage = () => {
         w1: useRef(null),
     };
 
-    // fading animation between sections
+    const [expandedCards, setExpandedCards] = useState({ c1: false, p1: false, 
+        p2: false, w1: false });
+
+
     useEffect(() => {
         const handleScroll = () => {
             const sections = document.querySelectorAll('.fadeInSection');
@@ -22,7 +25,6 @@ const ProjectsPage = () => {
                 const top = section.getBoundingClientRect().top;
                 const bottom = section.getBoundingClientRect().bottom;
                 const middle = top < window.innerHeight && bottom >= 0;
-                
                 if (middle) {
                     section.classList.add('isVisible');
                 } else {
@@ -30,22 +32,33 @@ const ProjectsPage = () => {
                 }
             });
         };
-    
         window.addEventListener('scroll', handleScroll);
-    
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
-    // collapsing content
-    const [isCollapsed, setIsCollapsed] = useState(null);
-    const toggleCollapse = (cardNum) => {
-        setIsCollapsed(isCollapsed === cardNum ? null : cardNum);
-        if (isCollapsed !== cardNum) {
-            setTimeout(() => {
-                sectionRefs[cardNum].current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 400); 
+    const [dynamicStyle, setDynamicStyle] = useState({});
+    const adjustCardPositions = (cardNum) => {
+        if (expandedCards[cardNum]) {
+        } else {
+            setDynamicStyle({});
         }
+    };
+
+    const [isCollapsed] = useState(null);
+    const toggleCollapse = (cardNum) => {
+        setExpandedCards(prevState => ({ ...prevState, [cardNum]: !prevState[cardNum] }));
+        setTimeout(() => {
+            adjustCardPositions(cardNum);
+        }, 0); 
     };
 
     const projSection = (cardNum) => ({
@@ -56,6 +69,7 @@ const ProjectsPage = () => {
         flexWrap: 'wrap',
         flexDirection: isCollapsed === cardNum ? 'column': 'row',
     });
+
 
     const projHeader: React.CSSProperties = {
         marginLeft: '5px',
@@ -94,12 +108,20 @@ const ProjectsPage = () => {
     });
 
     const collapseStyle = (cardNum) => ({
-        transition: 'max-height 0.4s ease, padding 0.4s ease',
-        overflow: 'hidden',
-        maxHeight: isCollapsed === cardNum ? '500px' : '0',
-        padding: isCollapsed === cardNum ? '15px' : '0px',
-        border: isCollapsed === cardNum ? 'solid' : 'none',
+        transition: 'opacity 0.4s ease, height 0.4s ease',
+        opacity: expandedCards[cardNum] ? 1 : 0,
         visibility: 'visible',
+        background: '#fff',
+        border: '1px solid #ccc',
+        borderRadius: '10px',
+        boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+        padding: expandedCards[cardNum] ? '15px' : '0px',
+        display: expandedCards[cardNum] ? 'block' : 'none',
+        position: 'absolute',
+        right: '-450px',
+        top: '0',
+        width: '400px',
+        zIndex: 2,
     });
 
     return(
@@ -115,7 +137,7 @@ const ProjectsPage = () => {
                         skills cultivation.</p>
                         <p className="card-text"><small>Repository found on GitHub</small></p>
                     </div>
-                <div style={collapseStyle('c1')}>
+                <div style={{...collapseStyle('c1'), ...dynamicStyle}}>
                         A place where I can document my projects and update periodically. This project utilizes 
                         HTML, CSS, and JavaScript for construction and ReactJS for efficient component organization. Familiarity 
                         with these languages and how they interect with each other helps strengthen my web development skillset.
@@ -135,7 +157,7 @@ const ProjectsPage = () => {
                     <table></table></p>
                     <p className="card-text"><small>Repository found on GitHub</small><br></br>
                     <small>Click here to view</small></p></div>
-                <div style={collapseStyle('p1')}>
+                <div style={{...collapseStyle('p1'), ...dynamicStyle}}>
                     This project not only cultivated my skills in designing independent tools using hosting
                     sources such as Netlify in this case, but it also helped me practice filtering algorithms 
                     and webscraping.
@@ -152,7 +174,7 @@ const ProjectsPage = () => {
                     <p className="card-text"><small>Repository found on GitHub</small><br></br>
                     <small>Click here to view</small></p>
                 </div>
-                <div style={collapseStyle('p2')}>
+                <div style={{...collapseStyle('p2'), ...dynamicStyle}}>
                 This project is practice dynamic website design using fluid CSS and JavaScript. 
                         The site is intended for the viewer to continuously scroll to progress and occasionally interact with
                         objects on the site for a storytelling and visually exciting experience. This is a test of coding skills 
@@ -172,7 +194,7 @@ const ProjectsPage = () => {
                 <table></table></p>
                 <p className="card-text"><small>- - -</small></p>
             </div>
-            <div style={collapseStyle('w1')}>
+            <div style={{...collapseStyle('w1'), ...dynamicStyle}}>
                 Steps: <br></br>1. Identification of problem - <i>Can it be solved technologically?</i> <br></br>
                 2. Decision of appropriate strcuture - <i>What language best suits the task? Is the solution an application 
                 or a script? User friendly necessity?</i> <br></br>
