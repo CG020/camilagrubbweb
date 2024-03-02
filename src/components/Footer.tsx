@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import ContactPage from './ContactPage';
 
-function Footer({ song, book, doing }) {
+function Footer({ song="Pretty Boy by Joji ft. Lil Yachty",
+ book= "Mythology by Edith Hamilton", doing="coding" }) {
 
     const footerStyle = {
         display: 'flex',
@@ -49,7 +50,7 @@ function Footer({ song, book, doing }) {
             <p style={titleStyle}>play music</p>
             <iframe 
                 style={{ borderRadius: '12px' }} 
-                src="https://open.spotify.com/embed/track/0b6wdul3A5sQNpIOv03OxP?utm_source=generator" 
+                src="https://open.spotify.com/embed/track/0f1G5SHFoFC9lO03gHCGVS?utm_source=generator" 
                 width="100%" 
                 height="352" 
                 allowFullScreen 

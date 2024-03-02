@@ -205,7 +205,7 @@ const ProjectsPage = () => {
                 </div> 
             </div> </div> </section>
 
-            <Footer song='Ocean Drive by Duke Dumont' book='Mythology by Edith Hamilton' doing='coding'></Footer>
+            <Footer></Footer>
         </div>
     );
 }

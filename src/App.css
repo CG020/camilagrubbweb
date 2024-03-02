@@ -107,13 +107,6 @@
   color: black;
 }
 
-.contact-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
 .card {
   position: relative;
 }
