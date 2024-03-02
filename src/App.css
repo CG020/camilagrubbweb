@@ -46,6 +46,15 @@
   padding: 20px;
 }
 
+.contacts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 30px;
+  gap: 30px;
+  margin: 30px;
+}
+
 .panel {
   border: 2px solid rgb(38, 27, 63);
   width: 25vw;

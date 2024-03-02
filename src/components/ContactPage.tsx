@@ -13,7 +13,7 @@ const ContactPage = () => {
     <div>
         <NavBar message={'contact information'} tabs={['']}/>
         <p style={contactStyle}>contact me with any of the options below or browse my professional profiles</p>
-        <div className='container'>
+        <div className='contacts-container'>
             <Panel 
                 title="email" 
                 image="src\assets\windowImage.jpg" 
@@ -40,7 +40,7 @@ const ContactPage = () => {
             />
         </div>
 
-        <Footer song='Ocean Drive by Duke Dumont' book='Mythology by Edith Hamilton' doing='coding'></Footer>
+        <Footer></Footer>
     </div>
     );
 };
