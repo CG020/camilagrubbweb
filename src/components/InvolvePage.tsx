@@ -16,7 +16,9 @@ const InvolvePage = () => {
         borderRadius: '8px',
         boxSizing: 'border-box',
         fontFamily: 'monospace, sans-serif',
+        fontSize: 'calc(0.5em + 1vw)',
         textAlign: 'left',
+        paddingLeft: '20px',
     };
 
     const rectContent = {
