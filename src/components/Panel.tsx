@@ -1,16 +1,19 @@
 function Panel({ title, image, content }) {
   const panelStyle = {
-    maxWidth: '200px',
-    minWidth: '250px',
+    maxWidth: '21vw',
+    minWidth: '200px',
     width: '100%',
     height: 'auto',
     padding: '15px',
     backgroundColor: '#333',
     display: 'flex',
+    flexWrap: 'wrap',
     flexDirection: 'column',
     borderRadius: '8px',
     boxSizing: 'border-box',
     fontFamily: 'monospace, sans-serif',
+    marginBottom: '22px',
+    justifyContent: 'space-around',
   };
 
   const imageContainerStyle = {

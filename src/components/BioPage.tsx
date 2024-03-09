@@ -23,6 +23,7 @@ const BioPage = () => {
         alignItems: 'center',
         padding: '15px',
         boxSizing: 'border-box',
+        margin: '40px'
     };
 
     const headerText: React.CSSProperties = {
@@ -35,7 +36,7 @@ const BioPage = () => {
     };
 
     const bioImage: React.CSSProperties = {
-        width: '400px',
+        width: '26vw',
         height: 'auto',
         marginLeft: '20px',
         marginRight: '20px',
@@ -49,7 +50,8 @@ const BioPage = () => {
         fontFamily: 'monospace',
         marginRight: '20px',
         textAlign: 'center',
-        fontSize: '1em',
+        fontSize: 'calc(0.5em + 1vw)',
+        whiteSpace: 'normal',
         marginTop: '35px',
         maxWidth: '100%',
     };
