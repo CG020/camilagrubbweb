@@ -44,13 +44,13 @@ const ProjectsPage = () => {
 
     const projText: React.CSSProperties = {
         fontFamily: 'monospace',
-        fontSize: '20px',
+        fontSize: 'calc(0.5em + 1vw)',
         marginLeft: '10px',
     };
 
     const projTitle: React.CSSProperties = {
         fontFamily: 'monospace',
-        fontSize: '30px',
+        fontSize: 'calc(0.5em + 2vw)',
     };
 
     const imageStyle = {
