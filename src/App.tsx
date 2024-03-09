@@ -51,7 +51,7 @@ function App() {
           <Divider title="work" align1='20px' align2='0px'></Divider>
           <div className='container'>
             <Link to="/bio">
-            <Panel 
+            <Panel
               title="bio" 
               image="src\assets\bioImage.jpg" 
               content="learn more about me and my background"
