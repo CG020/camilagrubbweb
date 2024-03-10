@@ -27,6 +27,7 @@ const InvolvePage = () => {
         height: 'auto',
         marginLeft: '35px',
         fontFamily: 'monospace, sans-serif',
+        fontSize: 'calc(0.5em + 0.6vw)',
     };
 
     const involveSections = [
